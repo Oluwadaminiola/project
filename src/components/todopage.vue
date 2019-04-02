@@ -100,6 +100,6 @@ export default {
 </script>
 <style>
 .green{
-    background: #98FB98 !important;
+    background: transparent !important;
 }
 </style>

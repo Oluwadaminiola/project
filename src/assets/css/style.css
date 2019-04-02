@@ -18,3 +18,48 @@ body{
 .ttodo{
   background: teal;
 }
+.bod{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 3%;
+}
+.wrapper{
+  display: flex;
+  width: 100%;
+}
+#sidebar{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  color: #fff;
+  width: 80px;
+  background: #556B2F;
+}
+#sidebarCollapse{
+  height: 40px;
+  width: 40px;
+}
+#sidebarCollapse span{
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+  background: #556B2F;
+}
+#sidebarCollapse span:first-of-type{
+  transform: rotate(45deg) translate (2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2){
+  opacity: 0;
+}
+#sidebarCollapse span:last-of-type{
+  transform: rotate(-45deg) transform(1px, -1px);
+}
+#sidebarCollapse.active span{
+  transform: none;
+  opacity: 1;
+  margin: 5px auto;
+}
