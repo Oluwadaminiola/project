@@ -11,7 +11,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link"  v-on:click="showCart = true" ><i class="icon ion-md-wallet"></i> Checkout</a>
+        <a class="nav-link chk"  v-on:click="showCart = true" ><i class="icon ion-md-wallet"></i> Checkout</a>
       </li>
     </ul>
     
@@ -24,7 +24,7 @@
             <p>Payment: N{{ cartTotal }}</p>
             <button class="btn btn-info" v-on:click="showCart = true" >Checkout</button>
         </div> -->
-        <div v-if="!showCart" class="col-lg-3 col-md-6 col-xs-12 mt-3" v-for="product in products" :key="products.indexOf(product)"  >
+        <div v-if="!showCart" class="col-lg-3 col-md-6 col-xs-12 p-3" v-for="product in products" :key="products.indexOf(product)"  >
             <div class="card ecard">
             <img class="card-img-top"
             :src="product.src" 
@@ -36,7 +36,7 @@
                 <a class="card-link" ><small>{{ product.price }} | </small></a>
                 <a class="card-link ml-auto" :class="{lil: product.inStore < 10, none: product.inStore == 0}" ><small>{{ product.inStore }} <template v-if="product.inStore == 1">piece</template> <template v-else>pieces</template> left </small></a>
                 <div class="card-text" >
-                <a class="btn btn-add my-2" v-on:click="addProductsToCart(product)" :disable="product.inStore == 0" ><small><i class="icon ion-md-basket"></i> ADD TO CART</small></a>
+                <a class="btn btn-add my-2" v-on:click="addProductsToCart(product)" :disable="product.inStore == 0" ><i class="icon ion-md-basket"></i> <small> ADD TO CART</small></a>
                 </div>
             </div>
             
@@ -139,6 +139,48 @@ export default {
                     src: [require('@/assets/img/3 (5).jpg')],
                     inStore: 1
                 },
+                {
+                    name: 'Samsung S8',
+                    description: '3gb ram, 128gb memory, 3000maH battery',
+                    price: 155000,
+                    src:[require('@/assets/img/3 (6).jpg')],
+                    inStore: 22
+                },
+                {
+                    name: 'Huawei A2',
+                    description: '4gb ram, 128gb memory, 3000maH battery',
+                    price: 300000,
+                    src: [require('@/assets/img/3 (8).jpg')],
+                    inStore: 15
+                },
+                {
+                    name: 'Iphone Xs',
+                    description: '3gb ram, 128gb memory, 3000maH battery',
+                    price: 155000,
+                    src:[require('@/assets/img/3 (9).jpg')],
+                    inStore: 24
+                },
+                {
+                    name: 'Iphone Xs+',
+                    description: '4gb ram, 128gb memory, 3000maH battery',
+                    price: 300000,
+                    src: [require('@/assets/img/3 (10).jpg')],
+                    inStore: 12
+                },
+                // {
+                //     name: 'Iphone 9s',
+                //     description: '3gb ram, 128gb memory, 3000maH battery',
+                //     price: 155000,
+                //     src:[require('@/assets/img/3 (7).jpg')],
+                //     inStore: 22
+                // },
+                // {
+                //     name: 'Iphone 8s+',
+                //     description: '4gb ram, 128gb memory, 3000maH battery',
+                //     price: 300000,
+                //     src: [require('@/assets/img/3 (5).jpg')],
+                //     inStore: 1
+                // },
             ]
         }
     },
