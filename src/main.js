@@ -17,7 +17,7 @@ require('@/assets/css/style.css')
 // require('@/assets/js/bootstrap.js')
 // require('@/assets/js/jquery.min.js')
 
-// require('@/assets/css/mdb-pro.css')
+// require('@/assets/css/ionicons.min.css')
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

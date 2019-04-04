@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div class="welcome" >
-    <div class="row" >
+    <!-- <div class="row" >
       <div class="col-lg-1 col-xs-1">
         <v-navigation-drawer
         permanent fixed width="100%"
@@ -32,35 +32,38 @@
           </v-container>
         </main>
       </div>
-    </div>
+    </div> -->
      
-    <!-- <div class="wrapper" >
+    <div class="wrapper" >
       <nav id="sidebar" >
+        <button class="btn btn-default mr-0" v-on:click="closeSide" ><i class="icon ion-md-redo"></i></button>
         <div class="sidebar-header" >
           Project
         </div>
         <ul class="list-unstyled components" >
-          <li>
+          <li class="">
             <router-link to="/todolist" >
-              todo
+              <i class="icon ion-md-list-box"></i> 
             </router-link>
           </li>
-          <li>
-            <router-link to="/todolist" >
-              todo
+          <li class="">
+            <router-link to="/e-commerce" >
+              <i class="icon ion-md-appstore"></i> 
             </router-link>
           </li>
         </ul>
       </nav>
-      <div id="content" style="margin-left: +100px;" >
-        <button class="btn btn-default" id="sidebarCollapse" >
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
+      <div id="content" class="" >
+        <nav class="navbar navbar-expand-lg nann" >
+          <button class="btn btn-menu" id="sidebarCollapse" v-on:click="openSide" >
+            <i class="icon ion-md-menu"></i>        
+          </button>
+
+        </nav>
+        
               <router-view></router-view>
       </div>
-    </div> -->
+    </div>
   </div>
   
 </div>
@@ -69,35 +72,26 @@
 <script>
 export default {
   name: 'App',
-  mounted: {
-   function () {
-     $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-   }
+  methods: {
+    openSide(){
+      document.getElementById('sidebar').style.width = '100px';
+      document.getElementById('content').style.marginLeft = '100px';
+    },
+    closeSide(){
+      document.getElementById('sidebar').style.width = '0';
+      document.getElementById('content').style.marginLeft = '0';
+    }
   }
 }
 </script>
 
 <style>
-.welcome {
-  height: 100vh !important;
-  width: 100%;
-  /* background: url('assets/img/2.jpg');
-  background-attachment: fixed !important;
+.welcome{
+  background: url('assets/img/22.jpg');
+  background-attachment: fixed;
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
+  height: 100%;
 }
-.welc{
-  position: fixed;
-  right: 0; 
-  min-width: 100%; 
-  min-height: 100%;
-}
-.navdraw{
-background: #000 !important;
-}
-.black{
-  background: #272727 !important;
-}
+
 </style>

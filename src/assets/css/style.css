@@ -1,3 +1,4 @@
+
 body{
   width: 100%;
   padding: 0;
@@ -19,47 +20,63 @@ body{
   background: teal;
 }
 .bod{
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   width: 100%;
   padding: 3%;
 }
 .wrapper{
-  display: flex;
+  background:  rgba(239, 247, 253, 0.9);
   width: 100%;
+}
+#content{
+  transition: .5s;
 }
 #sidebar{
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 100vh;
   color: #fff;
-  width: 80px;
-  background: #556B2F;
+  width: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  transition: .5s ; 
 }
-#sidebarCollapse{
-  height: 40px;
-  width: 40px;
+.sidebar-header{
+  font-family: pacifico;
+  padding: 20%;
 }
-#sidebarCollapse span{
-  width: 80%;
-  height: 2px;
-  margin: 0 auto;
-  display: block;
-  transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-  background: #556B2F;
+#sidebar ul li{
+  font-size: 27px;
+  text-decoration: none !important;
+  color: #fff !important;
+  padding-left: 30%;
 }
-#sidebarCollapse span:first-of-type{
-  transform: rotate(45deg) translate (2px, 2px);
+.btn-menu{
+  /* position: absolute; */
+  /* top: 10px; */
+  /* margin-left: 10px;  */
+  /* z-index: 9999; */
+  font-size: 16px;
+  border-radius: 100%;
+  background-color:#0C9;
+	color:#FFF;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
 }
-#sidebarCollapse span:nth-of-type(2){
-  opacity: 0;
+#content .nann{
+  border-bottom: 0.5px solid #a7a7a7;
 }
-#sidebarCollapse span:last-of-type{
-  transform: rotate(-45deg) transform(1px, -1px);
+nav{
+  /* border-bottom: 1px solid rgba(167, 167, 167, 0.1); */
+  font-family: montserrat;
 }
-#sidebarCollapse.active span{
-  transform: none;
-  opacity: 1;
-  margin: 5px auto;
+.btn-add{
+  border-radius: 20px;
+  background: #ffff32;
+  /* padding: 10px; */
+}
+.ecard{
+  border-radius: 20px;
 }
